@@ -1,26 +1,23 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Practice_Project.Data;
-using Practice_Project.SholehGallery;
-using System.Collections;
+using Practice_Project.DTOs;
+using Practice_Project.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Practice_Project.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ManufactorController : ControllerBase 
+    public class ManufactorController : ControllerBase
     {
         private readonly ApplicationDbContext _db;
         public ManufactorController(ApplicationDbContext dbContext)
         {
             _db = dbContext;
         }
-        
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Manufactor>>> GetManufactors()
         {
@@ -36,18 +33,24 @@ namespace Practice_Project.Controllers
         }
 
         [HttpPost("addManufactor")]
-        public async Task<IActionResult> AddManufactor(Manufactor model)
+        public async Task<IActionResult> AddManufactor(ManufactorDto model)
         {
-            _db.Manufactor.Add(model);
+            var manufactorToAdd = new Manufactor
+            {
+                Name = model.Name,
+                IsActive = model.IsActive,
+            };
+
+            _db.Manufactor.Add(manufactorToAdd);
             await _db.SaveChangesAsync();
             return NoContent();
         }
 
         [HttpPut("editManufactor")]
-        public async Task<IActionResult> EditManufactor(Manufactor model)
+        public async Task<IActionResult> EditManufactor(ManufactorDto model)
         {
             var foundManufactor = await _db.Manufactor.FindAsync(model.Id);
-            if(foundManufactor == null)
+            if (foundManufactor == null)
             {
                 return NotFound();
             }
@@ -57,7 +60,7 @@ namespace Practice_Project.Controllers
 
             _db.Manufactor.Update(foundManufactor);
             await _db.SaveChangesAsync();
-            
+
             return NoContent();
         }
 
@@ -69,7 +72,7 @@ namespace Practice_Project.Controllers
             {
                 return NotFound();
             }
-            
+
             _db.Manufactor.Remove(foundManufactor);
             await _db.SaveChangesAsync();
 

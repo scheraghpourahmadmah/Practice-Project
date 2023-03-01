@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Practice_Project.SholehGallery;
+using Practice_Project.Models;
 
 namespace Practice_Project.Data
 {

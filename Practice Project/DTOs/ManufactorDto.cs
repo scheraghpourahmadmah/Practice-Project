@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Practice_Project.SholehGallery
+namespace Practice_Project.DTOs
 {
-    public class Manufactor
+    public class ManufactorDto
     {
-        [Required]
-        public int Id { get; set; }
+        public int? Id { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
