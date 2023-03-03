@@ -1,0 +1,37 @@
+<div class="border p-4">
+    <div class="row">
+        <div class="col-10">
+            <h2 class="text-info"> Manufactor List</h2>
+        </div>
+        <div class="col-2 text-right">
+            <a asp-action="Upsert" class="btn btn-info form-control"> Create New </a>
+        </div>
+    </div>
+    <br />
+    <div>
+        <table  class="table table-striped border">
+            <tr class="table-secondary">
+                <th>
+                    Manufactor Name
+                </th>
+                <th></th>
+            </tr>
+
+            <tr *ngFor="let manufactor of manufactors">
+                <td>
+                   {{manufactor.name}}
+                </td>
+                <td>
+                    <a class="btn btn-primary bg-primary">
+                        Edit
+                    </a>
+
+                    <a class="btn btn-danger bg-danger">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</div>
