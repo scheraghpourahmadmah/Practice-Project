@@ -65,7 +65,7 @@ namespace Practice_Project.Controllers
         }
 
         [HttpDelete("deleteManufactor/{id}")]
-        public async Task<ActionResult> DeleteManufactor(int id)
+        public async Task<IActionResult> DeleteManufactor(int id)
         {
             var foundManufactor = await _db.Manufactor.FindAsync(id);
             if (foundManufactor == null)

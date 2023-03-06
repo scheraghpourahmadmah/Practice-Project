@@ -13,11 +13,23 @@ export class ManufactorComponent implements OnInit {
   constructor(private manufactorService: ManufactorService) { }
 
   ngOnInit(): void {
+    this.getManufactors();
+  }
+
+  getManufactors(){
     this.manufactorService.getManufactors().subscribe({
       next:response => {
         this.manufactors = response;
       },
      error: error => console.log(error)
+    })
+  }
+
+  deleteManufactor(id:number){
+    this.manufactorService.deleteManufactor(id).subscribe({
+      next: () =>{
+        this.getManufactors();
+      }
     })
   }
 

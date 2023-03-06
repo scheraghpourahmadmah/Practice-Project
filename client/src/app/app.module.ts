@@ -6,18 +6,24 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { ManufactorComponent } from './manufactor/manufactor.component';
 import { HomeComponent } from './home/home.component';
+import { CreateManufactorComponent } from './create-manufactor/create-manufactor.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditManufactorComponent } from './edit-manufactor/edit-manufactor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ManufactorComponent,
-    HomeComponent
+    HomeComponent,
+    CreateManufactorComponent,
+    EditManufactorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

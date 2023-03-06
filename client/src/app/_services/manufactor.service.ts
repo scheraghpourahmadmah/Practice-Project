@@ -13,4 +13,16 @@ export class ManufactorService {
   getManufactors(){
     return this.http.get<Manufactor[]>(this.baseUrl + 'manufactor');
   }
+  deleteManufactor(manufactorId:number){
+    // return this.http.delete('http://localhost:5012/api/manufactor/deleteManufactor/' + manufactorId);
+    return this.http.delete(this.baseUrl + 'manufactor/' + 'deleteManufactor/' + manufactorId );
+  }
+
+  createNewManufactor(manufactor: Manufactor) {
+    return this.http.post(this.baseUrl + 'manufactor/addManufactor', manufactor);
+  }
+
+  editManufactor(manufactor: Manufactor){
+    return this.http.put(this.baseUrl + 'manufactor/editManufactor', manufactor);
+  }
 }

@@ -4,7 +4,7 @@
             <h2 class="text-info"> Manufactor List</h2>
         </div>
         <div class="col-2 text-right">
-            <a asp-action="Upsert" class="btn btn-info form-control"> Create New </a>
+            <a asp-action="Upsert" class="btn btn-info form-control" routerLink="/createManufactor"> Create New </a>
         </div>
     </div>
     <br />
@@ -26,7 +26,7 @@
                         Edit
                     </a>
 
-                    <a class="btn btn-danger bg-danger">
+                    <a class="btn btn-danger bg-danger" (click)="deleteManufactor(manufactor.id)">
                         Delete
                     </a>
                 </td>
