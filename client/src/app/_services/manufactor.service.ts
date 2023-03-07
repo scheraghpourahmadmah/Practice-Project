@@ -13,6 +13,9 @@ export class ManufactorService {
   getManufactors(){
     return this.http.get<Manufactor[]>(this.baseUrl + 'manufactor');
   }
+  getManufactor(id:number){
+    return this.http.get<Manufactor>(this.baseUrl + 'manufactor/' + id);
+  }
   deleteManufactor(manufactorId:number){
     // return this.http.delete('http://localhost:5012/api/manufactor/deleteManufactor/' + manufactorId);
     return this.http.delete(this.baseUrl + 'manufactor/' + 'deleteManufactor/' + manufactorId );
