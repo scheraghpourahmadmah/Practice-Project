@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { CreateManufactorComponent } from './create-manufactor/create-manufactor.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditManufactorComponent } from './edit-manufactor/edit-manufactor.component';
+import { CarComponent } from './car/car.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EditManufactorComponent } from './edit-manufactor/edit-manufactor.compo
     ManufactorComponent,
     HomeComponent,
     CreateManufactorComponent,
-    EditManufactorComponent
+    EditManufactorComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
