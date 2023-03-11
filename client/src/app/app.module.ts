@@ -10,6 +10,7 @@ import { CreateManufactorComponent } from './create-manufactor/create-manufactor
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditManufactorComponent } from './edit-manufactor/edit-manufactor.component';
 import { CarComponent } from './car/car.component';
+import { CreateCarComponent } from './create-car/create-car.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CarComponent } from './car/car.component';
     HomeComponent,
     CreateManufactorComponent,
     EditManufactorComponent,
-    CarComponent
+    CarComponent,
+    CreateCarComponent
   ],
   imports: [
     BrowserModule,

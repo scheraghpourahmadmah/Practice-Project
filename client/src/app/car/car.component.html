@@ -1,1 +1,61 @@
-<p>car works!</p>
+<div class="border p-4">
+    <div class="row">
+        <div class="col-10">
+            <h2 class="text-info"> Car List</h2>
+        </div>
+        <div class="col-2 text-right">
+            <a asp-action="Upsert" class="btn btn-info form-control" routerLink="/createCar"> Create New </a>
+        </div>
+    </div>
+    <br />
+    <div>
+        <table  class="table table-striped border">
+            <tr class="table-secondary">
+                <th>
+                    Car Name
+                </th>
+                <th>
+                    Manufactor Name
+                </th>
+                <th>
+                    Color
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Year
+                </th>
+
+            </tr>
+
+            <tr *ngFor="let c of cars">
+                <td>
+                   {{c.name}}
+                 </td>
+                 <td>
+                    {{c.manufactorName}}
+                 </td>
+                 <td>
+                    {{c.color}}
+                  </td>
+                  <td>
+                    {{c.price}}
+                  </td>
+                  <td>
+                    {{c.year}}
+                  </td>
+                <td>
+                    <a class="btn btn-primary bg-primary" >
+                        Edit
+                    </a>
+
+                    <a class="btn btn-danger bg-danger">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</div>

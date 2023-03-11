@@ -22,11 +22,37 @@ namespace Practice_Project.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Car>>> GetCars()
+        public async Task<ActionResult<IEnumerable<CarDto>>> GetCars()
         {
-            var cars= await _db.Car.Include(c => c.Manufactor).ToListAsync();
+            //var cars= await _db.Car.Include(c => c.Manufactor).Select(x => new CarDto
+            //{
+            //    Id = x.Id,
+            //    Color = x.Color,
+            //    Name = x.Name,
+            //    Price = x.Price,
+            //    Year = x.Year,
+            //    ManufactorName = x.Manufactor.Name
+            //}).ToListAsync();
 
-            return Ok(cars);
+            var cars = await _db.Car.Include(c => c.Manufactor).ToListAsync();
+
+            var toReturn = new List<CarDto>();
+            foreach (var car in cars)
+            {
+                var toAdd = new CarDto
+                {
+                    Id = car.Id,
+                    Color = car.Color,
+                    Name = car.Name,
+                    Price = car.Price,
+                    Year = car.Year,
+                    ManufactorName = car.Manufactor.Name
+                };
+
+                toReturn.Add(toAdd);
+            }
+
+            return Ok(toReturn);
         }
 
         [HttpGet("{id}")]
@@ -47,7 +73,6 @@ namespace Practice_Project.Controllers
                 Price = model.Price,
                 Color = model.Color,
                 Year = model.Year,
-                IsActive = model.IsActive,
                 ManufactorId = model.ManufactorId,
             };
 
@@ -72,7 +97,6 @@ namespace Practice_Project.Controllers
             foundCar.Price = model.Price;
             foundCar.Color = model.Color;
             foundCar.Year = model.Year;
-            foundCar.IsActive = model.IsActive;
             foundCar.ManufactorId = model.ManufactorId;
 
             _db.Car.Update(foundCar);

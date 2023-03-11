@@ -16,8 +16,7 @@ namespace Practice_Project.DTOs
         public string Color { get; set; }
         
         public DateTime Year { get; set; }
-        
-        public bool IsActive { get; set; }
         public int ManufactorId { get; set; }
+        public string ManufactorName{ get; set; }
     }
 }
