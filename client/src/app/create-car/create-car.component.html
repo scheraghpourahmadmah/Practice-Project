@@ -1,1 +1,54 @@
-<p>create-car works!</p>
+<form [formGroup]="carform" (ngSubmit)="createNewCar()">
+    <div class="row p-3 border">
+        <div class="col-12 border-bottom">
+            <h2 class="text-primary">Create New Car</h2>
+        </div>
+        <div class="col-8 pt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label>Car Name</label>
+                </div>
+                <div class="col-8">
+                    <input formControlName="name" class="form-control" />
+                </div>
+                <div class="col-4">
+                    <label>Manufactor Name</label>
+                </div>
+                <div class="col-8 mt-1" >
+                    <input type="text">
+                </div>
+
+                <div class="col-4">
+                    <label>Color</label>
+                </div>
+                <div class="col-8 mt-1" >
+                    <input type="text">
+                </div>
+
+                <div class="col-4">
+                    <label>Price</label>
+                </div>
+                <div class="col-8 mt-1" >
+                    <input type="number">
+                </div>
+
+                <div class="col-4">
+                    <label>Year</label>
+                </div>
+                <div class="col-xs-12 col-12 col-md-4 form-group mb-3 mt-1">
+                    <input type="date"
+                    placeholder="Datepicker"
+                    class="form-control">
+                  </div>
+            </div>
+            <div class="form-group row mt-3">
+                <div class="col-4 offset-4" >
+                    <button type="submit" class="btn btn-primary form-control">Create</button>
+                </div>
+                <div class="col-4">
+                    <a class="btn btn-success form-control" routerLink="/car">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -73,7 +73,8 @@ namespace Practice_Project.Controllers
                 Price = model.Price,
                 Color = model.Color,
                 Year = model.Year,
-                ManufactorId = model.ManufactorId,
+                ManufactorId = 1004,// model.ManufactorId,
+                IsActive = true
             };
 
             _db.Car.Add(carToAdd);

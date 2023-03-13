@@ -13,4 +13,8 @@ export class CarService {
   getCars(){
     return this.http.get<Car[]>(this.baseUrl + 'car');
   }
+
+  createNewCar(car:Car){
+    return this.http.post(this.baseUrl + 'car/addCar', car);
+  }
 }

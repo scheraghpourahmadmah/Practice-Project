@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EditManufactorComponent } from './edit-manufactor/edit-manufactor.component';
 import { CarComponent } from './car/car.component';
 import { CreateCarComponent } from './create-car/create-car.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,15 @@ import { CreateCarComponent } from './create-car/create-car.component';
     CreateManufactorComponent,
     EditManufactorComponent,
     CarComponent,
-    CreateCarComponent
+    CreateCarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
