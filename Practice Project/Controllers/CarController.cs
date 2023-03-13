@@ -73,7 +73,7 @@ namespace Practice_Project.Controllers
                 Price = model.Price,
                 Color = model.Color,
                 Year = model.Year,
-                ManufactorId = 1004,// model.ManufactorId,
+                ManufactorId =  model.ManufactorId,
                 IsActive = true
             };
 

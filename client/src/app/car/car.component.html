@@ -46,11 +46,11 @@
                     {{c.year}}
                   </td>
                 <td>
-                    <a class="btn btn-primary bg-primary" >
+                    <a class="btn btn-primary bg-primary"  routerLink="/editCar/{{c.id}}">
                         Edit
                     </a>
 
-                    <a class="btn btn-danger bg-danger">
+                    <a class="btn btn-danger bg-danger" (click)="deleteCar(c.id)">
                         Delete
                     </a>
                 </td>

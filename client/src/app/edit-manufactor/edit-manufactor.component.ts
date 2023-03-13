@@ -20,6 +20,7 @@ export class EditManufactorComponent implements OnInit {
     this.getManufactor();
     this.initializeForm();
   }
+  
   initializeForm() {
     this.editManufactorform = this.fb.group({
       name :[''],

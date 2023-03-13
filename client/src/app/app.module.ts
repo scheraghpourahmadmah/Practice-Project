@@ -13,6 +13,8 @@ import { CarComponent } from './car/car.component';
 import { CreateCarComponent } from './create-car/create-car.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { EditCarComponent } from './edit-car/edit-car.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     EditManufactorComponent,
     CarComponent,
     CreateCarComponent,
+    EditCarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

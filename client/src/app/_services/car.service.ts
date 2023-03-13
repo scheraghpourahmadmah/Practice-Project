@@ -17,4 +17,16 @@ export class CarService {
   createNewCar(car:Car){
     return this.http.post(this.baseUrl + 'car/addCar', car);
   }
+
+  deleteCar(id:number){
+    return this.http.delete(this.baseUrl + 'car/' + 'deleteCar/' + id );
+  }
+
+  editCar(car: Car){
+    return this.http.put(this.baseUrl + 'car/editCar', car);
+  }
+
+  getCar(id:number){
+    return this.http.get<Car>(this.baseUrl + 'car/' + id);
+  }
 }
